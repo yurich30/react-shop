@@ -10,14 +10,15 @@ const ProductsList = () => {
                 {
                     ProductsData.map((
                         {
+                            id,
                             name,
                             description,
                             type,
                             capacity,
                             price
                         }
-                    )=>
-                        <div className="col-lg-6">
+                    )=> (
+                        <div className="col-lg-6" key={id}>
                             <ProductListItem
                                 name={name}
                                 description={description}
@@ -26,7 +27,7 @@ const ProductsList = () => {
                                 price={price}
                             />
                         </div>
-                    )
+                    ))
                 }
             </div>
         </div>
