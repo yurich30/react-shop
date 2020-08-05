@@ -5,7 +5,8 @@ const products = [
         description:"This is iPhone X",
         capacity:"64",
         price:"500",
-        type:"phone"
+        type:"phone",
+        image:"images/products/iPad.png",
     },
     {
         id:2,
@@ -13,7 +14,8 @@ const products = [
         description:"This is iPhone XS",
         capacity:"256",
         price:"1000",
-        type:"phone"
+        type:"phone",
+        image:"/images/products/iPhone.png",
     },
     {
         id:3,
@@ -21,7 +23,8 @@ const products = [
         description:"This is iPhone 8 Plus",
         capacity:"256",
         price:"800",
-        type:"phone"
+        type:"phone",
+        image:"/images/products/Apple TV.png",
     },
     {
         id:4,
@@ -29,7 +32,8 @@ const products = [
         description:"This is iPhone 8",
         capacity:"64",
         price:"300",
-        type:"phone"
+        type:"phone",
+        image:"/images/products/MacBook.png",
     }
 ]
 
