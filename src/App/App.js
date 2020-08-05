@@ -1,6 +1,6 @@
 import React from 'react';
-// import '../Common/Style/reset.css'
-// import '../Common/Style/base.css'
+import '../common/style/reset.css'
+import '../common/style/base.css'
 
 
 
