@@ -8,7 +8,7 @@ const ProductsListItem = ({
     type,
     capacity,
     price,
-    image,
+    image = "/images/products/iPhone.png",
 }) => {
     return(
         <div className="product-list-item">
