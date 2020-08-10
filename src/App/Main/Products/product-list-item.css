@@ -53,3 +53,23 @@
     padding: 15px 0;
     margin-bottom: 15px;
 }
+.product-quantity {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.product-quantity button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: white;
+    background-color: #ccc;
+    cursor: pointer;
+}
+.product-quantity button:hover {
+    color: rgb(0, 183, 255);
+    background-color: white;
+}
+.product-quantity input {
+    text-align: center;
+    height: 32px;
+}
