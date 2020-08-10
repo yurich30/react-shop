@@ -4,7 +4,7 @@ import './product-list-item.css'
 
 const ProductsListItem = ({
     name,
-    description,
+    description = "No description...>",
     type,
     capacity,
     price,
@@ -34,8 +34,8 @@ ProductsListItem.propTypes = {
     image:PropTypes.string,
 }
 
-ProductsListItem.defaultProps = {
-    description:"No description...",
-}
+// ProductsListItem.defaultProps = {
+//     description:"No description...",
+// }
 
 export default ProductsListItem

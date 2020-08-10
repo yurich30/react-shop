@@ -11,7 +11,7 @@ const products = [
     {
         id:2,
         name:"iPhone XS",
-        description:"This is iPhone XS",
+        // description:"",
         capacity:256,
         price:1000,
         type:"phone",
