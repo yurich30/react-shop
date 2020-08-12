@@ -73,3 +73,6 @@
     text-align: center;
     height: 32px;
 }
+.product-quantity button:disabled {
+    background-color: red;
+}
