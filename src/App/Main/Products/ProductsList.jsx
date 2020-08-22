@@ -3,9 +3,9 @@ import React from "react"
 import ProductListItem from "./ProductListItem"
 import productsData from "./productsData"
 
-const ProductsList = (
-    {addProductToCart},
-) => {
+const ProductsList = ({
+    addProductToCart,
+}) => {
     return (
         <div>
             <h1 className="page_title">Products list</h1>
@@ -30,6 +30,7 @@ const ProductsList = (
                                 price={price}
                                 image={image}
                                 addProductToCart = {addProductToCart}
+                                id={id}
                             />
                         </div>
                         )

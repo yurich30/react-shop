@@ -3,7 +3,6 @@ import ProductsList from './Products/ProductsList'
 
 const Main = ({
     addProductToCart,
-    
 }) => {
     return (
         <main className="main">
