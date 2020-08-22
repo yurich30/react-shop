@@ -1,9 +1,10 @@
 import React from 'react'
 import ProductsList from './Products/ProductsList'
 
-const Main = (
-    {addProductToCart},
-) => {
+const Main = ({
+    addProductToCart,
+    
+}) => {
     return (
         <main className="main">
             <div className="container">

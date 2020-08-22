@@ -7,7 +7,6 @@ class ProductListItem extends Component {
 
     state = {
         productCount:1,
-        color: "green",
     }
 
     onDecrementClick = () => {
@@ -41,8 +40,6 @@ class ProductListItem extends Component {
                 <div className="product-desc">{description}</div>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Capacity: {capacity}Gb</div>
-                <p>Color: green</p>
-                <button>Change {this.state.color}</button>
                 <div className="product-quantity">
                     <button onClick={this.onDecrementClick} disabled={this.state.productCount <= 1}>-</button>
                     <input type="text" value={this.state.productCount} readOnly/>

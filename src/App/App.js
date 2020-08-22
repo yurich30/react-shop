@@ -10,10 +10,15 @@ import Footer from './Footer/Footer'
 
 class App extends Component {
 	state = {
-		cartData:{
-			count:10,
-			price:10,
+		productsInCart: {
+			1:5,
+			2:3,
+			4:5,
 		}
+		// cartData:{
+		// 	count:0,
+		// 	price:0,
+		// }
 	}
 
 	addProductToCart = (count, price) => {
@@ -29,7 +34,8 @@ class App extends Component {
 		return (
 			<div>
 				<Header
-					cartData = {this.state.cartData}
+					// cartData = {this.state.cartData}
+					productsInCart = {this.state.productsInCart}
 				/>
 				<Main
 					addProductToCart = {this.addProductToCart}
