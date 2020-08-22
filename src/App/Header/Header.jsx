@@ -4,7 +4,9 @@ import Menu from './Menu/Menu'
 import Cart from './Cart/Cart'
 import './header.css'
 
-const Header = () => {
+const Header = ({
+	cartData
+}) => {
     return (
         <header className="header">
 			<div className="container">
@@ -16,7 +18,10 @@ const Header = () => {
 						<Menu/>
 					</div>
 					<div className="col-lg-3">
-						<Cart/>
+						<Cart
+							price={cartData.price}
+							count={cartData.count}
+						/>
 					</div>
 				</div>
 			</div>

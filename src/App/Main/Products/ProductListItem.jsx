@@ -1,7 +1,5 @@
 import React, { Component } from "react"
-
 import PropTypes from 'prop-types';
-
 import "./product-list-item.css"
 
 
@@ -9,8 +7,9 @@ class ProductListItem extends Component {
 
     state = {
         productCount:1,
+        color: "green",
     }
-  
+
     onDecrementClick = () => {
         this.setState((prevState) => ({
             productCount:prevState.productCount - 1
@@ -30,7 +29,8 @@ class ProductListItem extends Component {
             type,
             capacity,
             price,
-            image = '/images/products/iphone.png',
+            image = '/images/products/iPhone.png',
+            addProductToCart,
         } = this.props;
         return (
             <div className="product-list-item">
@@ -41,13 +41,17 @@ class ProductListItem extends Component {
                 <div className="product-desc">{description}</div>
                 <div className="product-features">Type: {type}</div>
                 <div className="product-features">Capacity: {capacity}Gb</div>
+                <p>Color: green</p>
+                <button>Change {this.state.color}</button>
                 <div className="product-quantity">
-                    <button onClick={this.onDecrementClick} disabled={this.state.productCount === 1}>-</button>
+                    <button onClick={this.onDecrementClick} disabled={this.state.productCount <= 1}>-</button>
                     <input type="text" value={this.state.productCount} readOnly/>
-                    <button onClick={this.onIncrementClick} disabled={this.state.productCount === 10}>+</button>
+                    <button onClick={this.onIncrementClick} disabled={this.state.productCount >= 10}>+</button>
                 </div>
                 <div className="product-price">${price}</div>
-                <button className="btn-add-to-cart">Add to cart</button>
+                <button className="btn-add-to-cart" 
+                onClick={() => addProductToCart(this.state.productCount,price)}
+                >Add to cart</button>
             </div>
         )
     }

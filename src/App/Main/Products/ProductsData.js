@@ -4,6 +4,7 @@ const products = [
         name:"iPhone X",
         description:"This is iPhone X",
         capacity:64,
+        color:"green",
         price:500,
         type:"phone",
         image:"images/products/iPad.png",
@@ -11,7 +12,7 @@ const products = [
     {
         id:2,
         name:"iPhone XS",
-        description:"",
+        description:"iPhone XS",
         capacity:256,
         price:1000,
         type:"phone",
@@ -33,7 +34,7 @@ const products = [
         capacity:64,
         price:300,
         type:"phone",
-        image:"/images/products/MacBook.png",
+        image:"/images/products/Apple TV.png",
     }
 ]
 
