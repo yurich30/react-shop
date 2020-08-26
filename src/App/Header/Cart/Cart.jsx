@@ -1,6 +1,12 @@
 import React, { Component } from "react"
 import { keys } from "lodash"
- 
+import productsData from '../../Main/Products/productsData'
+
+const productsObject = productsData.reduce((accObj,product) => ({
+    ...accObj,
+    [product.id]:product
+}),{})
+
 class Cart extends Component {
     state = {
         cartProductCount: 0,
@@ -16,10 +22,14 @@ class Cart extends Component {
             <div className="cart text-center">
                 {
                     keys(productsInCart).map((productId) => (
-                        <div>{productId}: {productsInCart[productId]}</div>
+                        <div>{productsObject[productId].name}: {productsInCart[productId]}</div>
                     ))
                 }
+                <div>
+                    total
+                </div>
             </div>
+            
         )
     }
     
