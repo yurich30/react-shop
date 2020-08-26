@@ -12,21 +12,18 @@ import productsData from './Main/Products/productsData'
 
 class App extends Component {
 	state = {
-		productsInCart: {}
+		productsInCart: {
+			1:5,
+			2:3,
+		}
 	}
 
-	addProductToCart = (productId, productCount) => {
-		if (has(this.state.productsInCart, `[${productId}]`)) {
-			const tempCart =	update(this.state.productsInCart, `[${productId}]`, function(count){
-				return count + productCount
-			});
-			this.setState({tempCart})
-		} else {
-			const tempCart = this.state.productsInCart[productId] = productCount
-			this.setState({
-				...this.state.productsInCart, ...tempCart
-			})
-		}
+	addProductToCart = (productId, count) => {
+		this.setState((prevState) =>({
+			productsInCart:{
+				'2':prevState.productsInCart['2'] + count
+			}
+		}))
 	}
 
 	render(){
@@ -36,6 +33,7 @@ class App extends Component {
 					// cartData = {this.state.cartData}
 					productsInCart = {this.state.productsInCart}
 				/>
+				<button onClick={() => this.addProductToCart(2,10)}>add tocart</button>
 				<Main
 					productsData = {productsData}
 					addProductToCart = {this.addProductToCart}
