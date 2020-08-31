@@ -26,7 +26,11 @@ class Cart extends Component {
                     ))
                 }
                 <div>
-                    total
+                    Total: {
+                        keys(productsInCart).reduce((total,productId)=>(
+                            total + (productsObject[productId].price * productsInCart[productId])
+                        ))
+                    }$
                 </div>
             </div>
             
