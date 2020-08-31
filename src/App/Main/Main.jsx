@@ -1,5 +1,10 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import ProductsList from './Products/ProductsList'
+import CartPage from './CartPage/CartPage'
+import PaymentPage from './PaymentPage/Payment'
+import ShippingPage from './ShippingPage/Shipping'
+
 
 const Main = ({
     addProductToCart,
@@ -12,9 +17,17 @@ const Main = ({
 						filter	
                     </div>
                     <div className="col-lg-9">
-						<ProductsList
+						{/* <ProductsList
                             addProductToCart = {addProductToCart}
-                        />
+                        /> */}
+                        <Route path='/' exact render={() => (
+                            <ProductsList
+                            addProductToCart = {addProductToCart}
+                            />
+                        )}/>
+                        <Route path='/cart' component={CartPage} />
+                        <Route path='/payment' component={PaymentPage} />
+                        <Route path='/shipping' component={ShippingPage} />
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { keys } from "lodash"
+import { Link } from "react-router-dom"
 import productsData from '../../Main/Products/productsData'
 
 const productsObject = productsData.reduce((accObj,product) => ({
@@ -22,7 +23,7 @@ class Cart extends Component {
             <div className="cart text-center">
                 {
                     keys(productsInCart).map((productId) => (
-                        <div>{productsObject[productId].name}: {productsInCart[productId]}</div>
+                        <div key={productId}>{productsObject[productId].name}: {productsInCart[productId]}</div>
                     ))
                 }
                 <div>
@@ -32,6 +33,7 @@ class Cart extends Component {
                         ),0)
                     }$
                 </div>
+                <Link to="/cart">Show Cart</Link>
             </div>
             
         )
