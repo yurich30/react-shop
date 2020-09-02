@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import '../common/style/reset.css'
 import '../common/style/base.css'
-import {has,update} from 'lodash'
+// import {has,update} from 'lodash'
 
 
 
@@ -13,13 +13,13 @@ import productsData from './Main/Products/productsData'
 class App extends Component {
 	state = {
 		productsInCart: {
-			1:5,
-			2:3,
+			// 1:5,
+			// 2:3,
 		}
 	}
 
 	addProductToCart = (productId, count) => {
-		this.setState((prevState) =>({
+		this.setState((prevState) => ({
 				productsInCart:{
 					...prevState.productsInCart,
 					[productId]:(prevState.productsInCart[productId] || 0) + count
@@ -37,6 +37,7 @@ class App extends Component {
 				<Main
 					productsData = {productsData}
 					addProductToCart = {this.addProductToCart}
+					productsInCart = {this.state.productsInCart}
 				/>
 				<Footer/>
 			</div>
