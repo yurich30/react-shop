@@ -27,6 +27,16 @@ class App extends Component {
 		}))
 	}
 
+	removeProductFromCart = (productId) => {
+		this.setState((prevState) => {
+			let prevProductsInCart = Object.assign({},prevState.ProductsInCart)
+			delete prevProductsInCart[productId]
+			return{
+				productsInCart:prevProductsInCart
+			}
+		})
+	}
+
 	render(){
 		return (
 			<div>
@@ -34,6 +44,7 @@ class App extends Component {
 					// cartData = {this.state.cartData}
 					productsInCart = {this.state.productsInCart}
 				/>
+				<button onClick={() => {this.removeProductFromCart(1)}}>Delete</button>
 				<Main
 					productsData = {productsData}
 					addProductToCart = {this.addProductToCart}
