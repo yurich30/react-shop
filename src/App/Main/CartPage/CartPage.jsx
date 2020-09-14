@@ -6,13 +6,15 @@ import CartProductListItemExtended from "../../../Components/Cart/CartProductLis
 
 
 const CartPage = ({
-    productsInCart
+    productsInCart,
+    removeProductFromCart
 }) => {
     console.log({productsInCart})
     return(
         <div>
             <h1 className='page-title'>Cart</h1>
             <CartProductList
+                removeProductFromCart = {removeProductFromCart}
                 productsInCart = {productsInCart} 
                 CartItem={CartProductListItemExtended}
             />
