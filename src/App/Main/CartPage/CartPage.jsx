@@ -7,7 +7,8 @@ import CartProductListItemExtended from "../../../Components/Cart/CartProductLis
 
 const CartPage = ({
     productsInCart,
-    removeProductFromCart
+    removeProductFromCart,
+    changeProductQuantity
 }) => {
     console.log({productsInCart})
     return(
@@ -17,6 +18,7 @@ const CartPage = ({
                 removeProductFromCart = {removeProductFromCart}
                 productsInCart = {productsInCart} 
                 CartItem={CartProductListItemExtended}
+                changeProductQuantity = {changeProductQuantity}
             />
             <CartTotal
                 productsInCart = {productsInCart}

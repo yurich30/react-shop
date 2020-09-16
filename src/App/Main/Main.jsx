@@ -9,7 +9,8 @@ import ShippingPage from './ShippingPage/Shipping'
 const Main = ({
     addProductToCart,
     productsInCart,
-    removeProductFromCart
+    removeProductFromCart,
+    changeProductQuantity
 }) => {
     return (
         <main className="main">
@@ -31,6 +32,7 @@ const Main = ({
                             <CartPage
                             productsInCart = {productsInCart}
                             removeProductFromCart = {removeProductFromCart}
+                            changeProductQuantity = {changeProductQuantity}
                             />
                         )}/>
                         <Route path='/payment' component={PaymentPage} />

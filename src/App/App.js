@@ -40,6 +40,33 @@ class App extends Component {
 		}))
 	}
 
+	// increment() {
+	// 	this.setState((prevState) => ({
+	// 		productsInCart:{
+	// 			...prevState.productsInCart,
+	// 			[productId]:prevState.productsInCart[productId] + 1
+	// 		}
+	// 	}))
+	// }
+
+	// decrement() {
+	// 	this.setState((prevState) => ({
+	// 		productsInCart:{
+	// 			...prevState.productsInCart,
+	// 			[productId]:prevState.productsInCart[productId] - 1
+	// 		}
+	// 	}))
+	// }
+
+	changeProductQuantity = (productId,quantity) => {
+		this.setState((prevState) => ({
+					productsInCart:{
+						...prevState.productsInCart,
+						[productId]:quantity
+					}
+				}))
+	}
+
 	render(){
 		return (
 			<div>
@@ -52,6 +79,7 @@ class App extends Component {
 					addProductToCart = {this.addProductToCart}
 					productsInCart = {this.state.productsInCart}
 					removeProductFromCart = {this.removeProductFromCart}
+					changeProductQuantity = {this.changeProductQuantity}
 				/>
 				<Footer/>
 			</div>
