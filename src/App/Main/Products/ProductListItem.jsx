@@ -34,7 +34,7 @@ class ProductListItem extends Component {
             addProductToCart,
         } = this.props;
         const { 
-            productCount 
+            productCount,
         } = this.state;
         return (
             <div className="product-list-item">
@@ -49,6 +49,7 @@ class ProductListItem extends Component {
                     productCount = {this.state.productCount}
                     onDecrementClick = {this.onDecrementClick}
                     onIncrementClick = {this.onIncrementClick}
+                    minCount={1} 
                 />
                 <div className="product-price">${price}</div>
                 <button className="btn-add-to-cart" 
