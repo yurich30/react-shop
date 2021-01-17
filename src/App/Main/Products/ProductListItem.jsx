@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import PropTypes from 'prop-types';
 import "./product-list-item.css"
 import Quantity from "../../../Components/Quantity/Quantity";
+import { connect } from "react-redux";
 
 
 class ProductListItem extends Component {
@@ -32,6 +33,7 @@ class ProductListItem extends Component {
             price,
             image = '/images/products/iPhone.png',
             addProductToCart,
+            isLiked = false,
         } = this.props;
         const { 
             productCount,
@@ -41,6 +43,9 @@ class ProductListItem extends Component {
                 <div className="product-image">
                     <img src={image} alt=""/>
                 </div> 
+                <button>
+                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+                </button>
                 <div className="product-title">{name}</div>
                 <div className="product-desc">{description}</div>
                 <div className="product-features">Type: {type}</div>
@@ -77,4 +82,10 @@ ProductListItem.propTypes = {
 //     description: "No description ..."
 // }
 
-export default ProductListItem
+const mapStateToProps = (state, props) => ({
+    isLiked:state[props.id]
+})
+
+export default connect(
+    mapStateToProps
+)(ProductListItem)
