@@ -41,6 +41,8 @@ class ProductListItem extends Component {
                 <div className="product-image">
                     <img src={image} alt=""/>
                 </div> 
+                <button><span>&#129505;</span></button>
+                {/* <button><span>&#128420;</span></button> */}
                 <div className="product-title">{name}</div>
                 <div className="product-desc">{description}</div>
                 <div className="product-features">Type: {type}</div>

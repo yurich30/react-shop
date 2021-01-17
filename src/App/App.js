@@ -13,8 +13,8 @@ import productsData from './Main/Products/productsData'
 class App extends Component {
 	state = {
 		productsInCart: {
-			// 1:5,
-			// 2:3,
+			1:5,
+			2:3
 		}
 	}
 
@@ -30,33 +30,8 @@ class App extends Component {
 	removeProductFromCart = (productId) => {
 		this.setState((prevState) => ({
 			productsInCart:omit(prevState.productsInCart,productId)
-			// let prevProductsInCart = 
-			// {...prevState.productsInCart}
-			// Object.assign({},prevState.productsInCart)
-			// delete prevProductsInCart[productId]
-			// return{
-			// 	productsInCart:prevProductsInCart
-			// }
 		}))
 	}
-
-	// increment() {
-	// 	this.setState((prevState) => ({
-	// 		productsInCart:{
-	// 			...prevState.productsInCart,
-	// 			[productId]:prevState.productsInCart[productId] + 1
-	// 		}
-	// 	}))
-	// }
-
-	// decrement() {
-	// 	this.setState((prevState) => ({
-	// 		productsInCart:{
-	// 			...prevState.productsInCart,
-	// 			[productId]:prevState.productsInCart[productId] - 1
-	// 		}
-	// 	}))
-	// }
 
 	changeProductQuantity = (productId,quantity) => {
 		this.setState((prevState) => ({
@@ -71,7 +46,6 @@ class App extends Component {
 		return (
 			<div>
 				<Header
-					// cartData = {this.state.cartData}
 					productsInCart = {this.state.productsInCart}
 				/>
 				<Main

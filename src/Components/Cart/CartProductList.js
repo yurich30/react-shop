@@ -20,7 +20,6 @@ const CartProductsList = ({
                     key={productId}
                     removeProductFromCart = {removeProductFromCart}
                     changeProductQuantity ={changeProductQuantity}
-
                     />
                 ))
             }
