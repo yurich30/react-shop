@@ -15,6 +15,10 @@ class App extends Component {
 		productsInCart: {
 			1:5,
 			2:3
+		},
+		likeProductState : {
+			1: true,
+			2: false
 		}
 	}
 
@@ -42,6 +46,24 @@ class App extends Component {
 				}))
 	}
 
+	addLike = (productId) => {
+		this.setState((prevState) => ({
+			likeProductState:{
+				...prevState.likeProductState,
+				[productId] : true
+			}
+		}))
+    }
+
+    removeLike = (productId) => {
+        this.setState((prevState) => ({
+			likeProductState:{
+				...prevState.likeProductState,
+				[productId] : false
+			}
+		}))
+    }
+
 	render(){
 		return (
 			<div>
@@ -52,8 +74,11 @@ class App extends Component {
 					productsData = {productsData}
 					addProductToCart = {this.addProductToCart}
 					productsInCart = {this.state.productsInCart}
+					likeProductState = {this.state.likeProductState}
 					removeProductFromCart = {this.removeProductFromCart}
 					changeProductQuantity = {this.changeProductQuantity}
+					addLike = {this.addLike}
+					removeLike = {this.removeLike}
 				/>
 				<Footer/>
 			</div>

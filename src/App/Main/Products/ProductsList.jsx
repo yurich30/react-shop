@@ -5,6 +5,9 @@ import productsData from "./productsData"
 
 const ProductsList = ({
     addProductToCart,
+    likeProductState,
+    addLike,
+    removeLike
 }) => {
     return (
         <div>
@@ -30,7 +33,11 @@ const ProductsList = ({
                                 price={price}
                                 image={image}
                                 addProductToCart = {addProductToCart}
+                                likeProductState = {likeProductState}
                                 id={id}
+                                addLike = {addLike}
+                                removeLike = {removeLike}
+                                isLiked = {likeProductState[id]}
                             />
                         </div>
                         )
