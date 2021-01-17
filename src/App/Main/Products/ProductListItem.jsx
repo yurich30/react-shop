@@ -25,7 +25,7 @@ class ProductListItem extends Component {
     renderLike(){
         const {
             isLiked,
-            id,
+            id ,
             addLike,
             removeLike
         } = this.props
