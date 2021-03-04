@@ -3,9 +3,7 @@ import React from "react"
 import ProductListItem from "./ProductListItem"
 import productsData from "./productsData"
 
-const ProductsList = ({
-    addProductToCart,
-}) => {
+const ProductsList = () => {
     return (
         <div>
             <h1 className="page-title">Products list</h1>
@@ -29,7 +27,6 @@ const ProductsList = ({
                                 color={color}
                                 price={price}
                                 image={image}
-                                addProductToCart = {addProductToCart}
                                 id={id}
                             />
                         </div>

@@ -22,18 +22,7 @@ class ProductListItem extends Component {
             productCount:prevState.productCount + 1
         }))
     }
-
-    // renderLike () {
-    //     const {
-    //         isLiked,
-    //         id,
-    //         removeLike,
-    //         addLike
-    //     } = this.props
-
-    //     isLiked ? removeLike(id) : addLike(id)
-    // }
-
+    
     render() {
         const {
             id,
@@ -107,7 +96,12 @@ const mapDispatchToProps = (dispatch) => ({
     removeLike: (id) => dispatch ({
         type: "DISLIKE",
         id
-    })
+    }),
+    addProductToCart:(id,count)=> dispatch({
+        type:"ADD_PRODUCT_TO_CART",
+        id,
+        count,
+    }),
 })
 
 export default connect(

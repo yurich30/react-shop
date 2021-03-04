@@ -56,6 +56,15 @@ const mapDispatchToProps = (dispatch) => ({
     removeLike: (id) => dispatch ({
         type: "DISLIKE",
         id
+    }),
+    removeProductFromCart: (id) => dispatch  ({
+        type: "REMOVE_PRODUCT_FROM_CART",
+        id
+    }),
+    changeProductQuantity: (id, quantity) => dispatch({
+        type: "CHANGE_PRODUCT_QUANTITY",
+        id,
+        quantity 
     })
 })
 

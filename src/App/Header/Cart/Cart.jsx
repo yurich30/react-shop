@@ -36,11 +36,10 @@ class Cart extends Component {
 
 }
 
-const mapStateToProps = (state, props) => ({
-    // cartProductCount: state.productCartState[props.id],
+const mapStateToProps = (state) => ({
     productsInCart:state.productsInCart
 })
 
 export default connect(
-    mapStateToProps,
+    mapStateToProps
 )(Cart)
