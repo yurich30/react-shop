@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import productsData, {getProductsMap} from '../../Main/Products/productsData'
 import CartTotal from "../../../Components/Cart/CartTotal"
 import CartProductList from "../../../Components/Cart/CartProductList"
+import { connect } from "react-redux"
 
 
 
@@ -15,7 +16,7 @@ class Cart extends Component {
     render()  {
         const {
             productsInCart,
-            productsObject = getProductsMap(productsData)
+            // productsObject = getProductsMap(productsData)
         } = this.props
 
         return (
@@ -35,4 +36,11 @@ class Cart extends Component {
 
 }
 
-export default Cart
+const mapStateToProps = (state, props) => ({
+    // cartProductCount: state.productCartState[props.id],
+    productsInCart:state.productsInCart
+})
+
+export default connect(
+    mapStateToProps,
+)(Cart)

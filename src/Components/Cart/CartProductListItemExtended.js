@@ -9,8 +9,9 @@ const CartProductListItemExtended = ({
     productCount,
     removeProductFromCart,
     changeProductQuantity,
-    minCount,
-    isLiked = false
+    isLiked,
+    removeLike,
+    addLike
 }) => (     
     <div className="cart-product-list-item-description">
         <div className="row">
@@ -36,7 +37,7 @@ const CartProductListItemExtended = ({
                 <p className="cart-extended-sum">
                         Sum for this item: <span className="bold sum-price">$ {(product.price * productCount)} </span> 
                 </p>
-                <button>{isLiked ? <span>&#9829;</span> : <span>&#9825;</span>} </button>
+                <button onClick={() => isLiked ? removeLike(product.id) : addLike(product. id)}>{isLiked ? <span>&#9829;</span> : <span>&#9825;</span>} </button>
                 <button onClick = {() => removeProductFromCart(product.id)}>delete</button>
             </div>
         </div>
@@ -44,15 +45,15 @@ const CartProductListItemExtended = ({
 )
 
 const mapStateToProps = (state, props) => ({
-    isLiked:state[props.product.id]
+    isLiked:state.productsLikeState[props.product.id]
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    addLike: (id) => ({
+    addLike: (id) => dispatch ({
         type: "LIKE",
         id
     }),
-    removeLike: (id) => ({
+    removeLike: (id) => dispatch ({
         type: "DISLIKE",
         id
     })
